@@ -63,7 +63,7 @@ def main():
         Tracking the loss and accuracy on the validation set to determine the best hyperparameters
 
         """
-        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        device = torch.device('cuda' if torch.cuda.is_available() and in_arg.gpu == True else 'cpu')
         model = models_dict[model_name]
         input_units = input_dict[model_name]
 
